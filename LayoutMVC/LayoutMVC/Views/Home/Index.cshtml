@@ -1,0 +1,19 @@
+﻿@model List<Mountain>;
+
+        <section class="container my-3">
+            <div class="row">
+                @for (int i = 0; i < @Model.Count; i++)
+                {
+                    <div class="col-lg-4">
+                        <div class="card my-2">
+                            <img src="@Model[i].ImageUrl" class="card-img-top" style="aspect-ratio: 16/9">
+                            <div class="card-body">
+                                <h5 class="card-title">@Model[i].Name</h5>
+                                <p class="card-text">Location - @Model[i].Location<br>Height - @Model[i].Height</p>
+                                <a href="/home/carddetails/@Model[i].Id" class="btn btn-primary">Go Details</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </section>
